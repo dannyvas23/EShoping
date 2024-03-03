@@ -5,7 +5,7 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace Catalog.Application.Commands;
 
-public class UpdateProductByIdCommand: IRequest<bool>
+public class UpdateProductCommand: IRequest<bool>
 {
     
     [BsonId]

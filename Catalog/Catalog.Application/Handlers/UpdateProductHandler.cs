@@ -5,7 +5,7 @@ using MediatR;
 
 namespace Catalog.Application.Handlers;
 
-public class UpdateProductHandler: IRequestHandler<UpdateProductByIdCommand, bool>
+public class UpdateProductHandler: IRequestHandler<UpdateProductCommand, bool>
 {
     private readonly IProductRepository _productRepository;
 
@@ -14,7 +14,7 @@ public class UpdateProductHandler: IRequestHandler<UpdateProductByIdCommand, boo
         _productRepository = productRepository;
     }
     
-    public Task<bool> Handle(UpdateProductByIdCommand request, CancellationToken cancellationToken)
+    public Task<bool> Handle(UpdateProductCommand request, CancellationToken cancellationToken)
     {
         var statusUpdateProduct = _productRepository.UpdateProduct(new Product
         {
